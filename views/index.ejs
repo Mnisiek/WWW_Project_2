@@ -1,0 +1,29 @@
+<div class="author">
+    <h1 class="author__heading">Witaj na blogu TramwajeWKrakowie!</h1>
+    <p class="author__body">Codziennie zamieszczam tutaj świeże informacje
+       o wykolejeniach, remontach, budowie nowych linii i zakupach taborowych MPK.
+    </p>
+  </div>
+  
+  <img src="/img/105Na.jpg" alt="Tramwaj 105Na na trasie linii nr 19" 
+    class="hero-image" width="1024" height="703">
+  
+  <section class="articles">
+    <h2 class="articles__heading">Ostatnie artykuły</h2>
+  
+    <ul class="article-ul">
+      <% data.forEach(post => { %>
+        <li>
+          <a href="/post/<%= post._id %>">
+              <span><%= post.title %></span>
+              <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+  
+    <% if (nextPage !== null) { %>
+     <a href="/?page=<%= nextPage %>" class="pagination">&lt; Zobacz starsze artykuły</a>
+    <% } %>
+  
+  </section>

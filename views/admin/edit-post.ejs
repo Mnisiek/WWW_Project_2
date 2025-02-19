@@ -1,0 +1,20 @@
+<a style="font-size: 22px;" href="/dashboard">&larr; Powrót</a>
+<div class="admin-title">
+  <h2>Edytuj artykuł</h2>
+
+  <form action="/delete-post/<%= data._id %>?_method=DELETE" method="POST">
+    <input type="submit" value="Usuń" class="btn btn-delete">
+  </form>
+</div>
+
+<form class="contact-form" action="/edit-post/<%= data._id %>?_method=PUT" method="POST">
+
+  <label for="title"><b>Tytuł</b></label>
+  <input type="text" placeholder="Tytuł artykułu" name="title" value="<%= data.title %>">
+
+  <label for="body"><b>Treść</b></label>
+  <textarea name="body" cols="50" rows="14"><%= data.body %></textarea>
+
+  <input type="submit" value="Zapisz edycję" class="btn" style="border: 20px; width: 120px;">
+
+</form>
